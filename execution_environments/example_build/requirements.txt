@@ -1,0 +1,2 @@
+# The following installs the VMware vSphere Automation SDK for Python
+#git+https://github.com/vmware/vsphere-automation-sdk-python.git

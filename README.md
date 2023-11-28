@@ -25,7 +25,7 @@ On a RHEL 8 or 9 OS
 ###### To kept the initial build simple we will use 1 file. galaxy collection and python modules can be added in sperrate requirement files to make it easier to read. See examples
 6. vi execution-environment.yml
 
-# In the file in the baseline items for a EE build
+##### In the file in the baseline items for a EE build
 
 version: 3
 

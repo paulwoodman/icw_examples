@@ -48,7 +48,7 @@ options:
 ###### Build the container image and use tags to help easily define what the EE includes
 7. ansible-builder build --tag vmaware_ee
 
-####### Once the build completes you can verify the image in podman
+###### Once the build completes you can verify the image in podman
 
 8. podman images
 

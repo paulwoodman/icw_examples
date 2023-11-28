@@ -64,26 +64,24 @@ options:
 ###### Push the image to EE to PAH
 3. podman push pah.example.com/demo_ee
 
+### Uselful random commands
 
-
-handy commands:
-
-ansible-builder build --tag hostname/infra_automation_ansible29
-
+###### Delete images rougue images 
 podman image prune
 
+###### enter the EE and get bash prompt
 podman run -it quay.io/danielgoosen/vo-ee2 /bin/bash
 
-pip freeze
+###### Delete an image
+podman rmi image_name
 
-ansible galaxy collection list
+###### View the collection list in that EE
+podman run image_id ansible_galaxy collection list
 
-podman run 4fb8363c0cdc ansible-galaxy collection list
+###### View the python packages install in that EE
+podman run image_id pip3 list
 
-podman run 4fb8363c0cdc pip3 list
-
+ansible-builder build --tag hostname/infra_automation_ansible29
 podman login https://aap2pah.rydzinski.local --tls-verify=false
-
 podman push aap2pah.rydzinski.local/demo_ee --tls-verify=false
 
-podman rmi image_name

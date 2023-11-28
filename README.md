@@ -19,3 +19,5 @@ podman run 4fb8363c0cdc pip3 list
 podman login https://aap2pah.rydzinski.local --tls-verify=false
 
 podman push aap2pah.rydzinski.local/demo_ee --tls-verify=false
+
+podman rmi image_name

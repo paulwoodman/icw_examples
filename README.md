@@ -49,6 +49,7 @@ options:
 7. ansible-builder build --tag vmaware_ee
 
 ####### Once the build completes you can verify the image in podman
+
 8. podman images
 
 

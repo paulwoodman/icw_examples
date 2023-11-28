@@ -1,6 +1,6 @@
 # ICW Example playbooks
 
-# How to Build a Custom Execution Environment for AAP
+### How to Build a Custom Execution Environment for AAP
 
 On a RHEL 8 or 9 OS
 
@@ -51,7 +51,7 @@ options:
 8. podman images
 
 
-# How to Push a Custom Execution Environment to PAH or other remote location
+### How to Push a Custom Execution Environment to PAH or other remote location
 
 ###### List all the images
 1. podman images

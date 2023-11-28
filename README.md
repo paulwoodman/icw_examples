@@ -26,7 +26,7 @@ On a RHEL 8 or 9 OS
 6. vi execution-environment.yml
 
 ##### In the file in the baseline items for a EE build
-
+```
 version: 3
 
 
@@ -43,6 +43,7 @@ dependencies:
 
 options:
   package_manager_path: /usr/bin/microdnf
+```
 
 ###### Build the container image and use tags to help easily define what the EE includes
 7. ansible-builder build --tag vmaware_ee

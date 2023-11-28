@@ -66,7 +66,7 @@ options:
 
 ### Uselful random commands
 
-###### Delete images rougue images 
+###### Delete rougue images 
 podman image prune
 
 ###### enter the EE and get bash prompt

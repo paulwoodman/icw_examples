@@ -7,3 +7,10 @@
 - name: display count
   debug:
     msg: "Found {{ updates.stdout_lines | length }} packages to updated"
+
+- name: Update server if packages are available
+  block:
+   - name: Run a dnf update
+     ansible.builtin.dnf:
+       name: "*"
+       state: latest

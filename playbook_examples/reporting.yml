@@ -1,0 +1,10 @@
+---
+- name: Ansible report job
+  hosts: all
+  gather_facts: True
+  tasks:
+
+
+    - name: Reporting
+      include_role:
+        name: reporting

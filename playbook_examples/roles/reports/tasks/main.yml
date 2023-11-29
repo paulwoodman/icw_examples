@@ -1,0 +1,11 @@
+---
+vars:
+  outdir: /var/tmp/reports
+
+pre_tasks:
+  
+  - name: create output folder
+    run_onces yes
+    file:
+      path: "{{ outdir }}"
+      state: directory

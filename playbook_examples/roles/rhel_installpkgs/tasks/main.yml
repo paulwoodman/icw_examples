@@ -1,0 +1,14 @@
+---
+- name: Install the couple of packages
+  ansible.builtin.dnf:
+    name:
+      - screen
+      - wget
+    state: latest
+
+- name: Install couple of packages using a vars file
+  ansible.builtin.dnf
+    name: {{ item }}
+    state: latest
+  with_items: "{{ packages }"
+

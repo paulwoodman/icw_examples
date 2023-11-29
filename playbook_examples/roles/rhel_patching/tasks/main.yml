@@ -8,7 +8,7 @@
   debug:
     msg: "Found {{ updates.stdout_lines | length }} packages to be updated"
 
-block
+block:
   - name: Update server if packages are available
     ansible.builtin.dnf:
       name: "*"

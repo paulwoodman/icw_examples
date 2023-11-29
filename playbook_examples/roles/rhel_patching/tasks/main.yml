@@ -2,8 +2,6 @@
 
 - name: check to see if server has package updates
   ansible.builtin.shell: dnf list --updates | awk 'f;/Available Upgrades/{f=1}' | awk '{ print $1}'
-  args:
-    warn: false
   register: updates
 
 - name: display count

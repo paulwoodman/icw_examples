@@ -9,13 +9,13 @@
     msg: "Found {{ updates.stdout_lines | length }} packages to be updated"
 
 - block
-  - name: Update server if packages are available
-    ansible.builtin.dnf:
-      name: "*"
-      state: latest
-    when: updates.stdout_lines | length > 0
+    - name: Update server if packages are available
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+      when: updates.stdout_lines | length > 0
 
-  - name: Check of the server requires a reboot after patching
-    shell: needs-restart -r 
-    register: reboot_required
+    - name: Check of the server requires a reboot after patching
+      shell: needs-restart -r 
+      register: reboot_required
      

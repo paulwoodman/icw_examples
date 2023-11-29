@@ -6,10 +6,16 @@
 
 - name: display count
   debug:
-    msg: "Found {{ updates.stdout_lines | length }} packages to updated"
+    msg: "Found {{ updates.stdout_lines | length }} packages to be updated"
 
-- name: Update server if packages are available
-  ansible.builtin.dnf:
-    name: "*"
-    state: latest
-  when: updates.stdout_lines | length > 0
+- block
+   - name: Update server if packages are available
+     ansible.builtin.dnf:
+       name: "*"
+       state: latest
+     when: updates.stdout_lines | length > 0
+
+   - name: Check of the server requires a reboot after patching
+     shell: needs-restart -r 
+     register: reboot_required
+     

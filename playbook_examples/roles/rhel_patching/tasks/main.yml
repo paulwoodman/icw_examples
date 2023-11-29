@@ -20,8 +20,13 @@
      register: reboot_required
      ignore_errors: True
      
-     
    - name: print reboot status
      ansible.builtin.debug:
        msg: Server requires a reboot
      when: reboot_required.rc !=0 
+
+- name: Reboot the server if required
+  ansible.builtin.reboot
+    msg: "Reboot initiated by Ansible"
+  when: reboot_required.rc == 1  
+

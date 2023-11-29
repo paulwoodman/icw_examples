@@ -17,9 +17,8 @@
 
    - name: Check of the server requires a reboot after patching
      ansible.builtin.shell: needs-restarting -r 
-     failed_when: false
      register: reboot_required
-     change_when: false
+     ignore_errors: True
      
      
    - name: print reboot status

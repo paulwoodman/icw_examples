@@ -5,7 +5,7 @@
   register: updates
 
 - name: display count
-  debug:
+  ansible.builtin.debug:
     msg: "Found {{ updates.stdout_lines | length }} packages to be updated"
 
 - block:
@@ -16,10 +16,13 @@
      when: updates.stdout_lines | length > 0
 
    - name: Check of the server requires a reboot after patching
-     shell: needs-restarting -r 
+     ansible.builtin.shell: needs-restarting -r 
+     failed_when: false
      register: reboot_required
+     change_when: false
+     
      
    - name: print reboot status
-     debug:
+     ansible.builtin.debug:
        msg: Server requires a reboot
      when: reboot_required.rc !=0 

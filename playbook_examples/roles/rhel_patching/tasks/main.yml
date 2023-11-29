@@ -9,8 +9,7 @@
     msg: "Found {{ updates.stdout_lines | length }} packages to updated"
 
 - name: Update server if packages are available
-  block:
-   - name: Run a dnf update
-     ansible.builtin.dnf:
-       name: "*"
-       state: latest
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+  when: updates.stdout_lines | length > 0

@@ -7,7 +7,7 @@
     state: latest
 
 - name: Install couple of packages using a vars file
-  ansible.builtin.dnf
+  ansible.builtin.dnf:
     name: {{ item }}
     state: latest
   with_items: "{{ packages }"

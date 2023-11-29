@@ -16,6 +16,10 @@
      when: updates.stdout_lines | length > 0
 
    - name: Check of the server requires a reboot after patching
-     shell: needs-restart -r 
+     shell: needs-restarting -r 
      register: reboot_required
      
+   - name: print reboot status
+     debug:
+       msg: Server requires a reboot
+     when: reboot_required.rc !=0 

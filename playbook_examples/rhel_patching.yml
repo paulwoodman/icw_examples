@@ -1,0 +1,10 @@
+---
+- name: RHEL Patching
+  hosts: all
+  gather_facts: False
+  tasks:
+
+
+    - name: Update a RHEL server
+      include_role:
+        name: rhel_patching

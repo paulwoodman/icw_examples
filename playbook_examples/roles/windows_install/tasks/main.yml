@@ -12,7 +12,7 @@
     headers:
       X-JFrog-Art-Api: {{ artifactory_ansible_api_key_saas }}"
     dest: C:\Windows\Temp\{{ item.pkg }}
-  with_items: {{ msi }}
+  with_items: "{{ msi }}"
 
 #- name: Install msi's packages
 #  win_package: 

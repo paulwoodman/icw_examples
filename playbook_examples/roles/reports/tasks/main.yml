@@ -5,7 +5,7 @@ vars:
 pre_tasks:
   
   - name: create output folder
-    run_onces yes
-    file:
+    run_onces: yes
+    ansible.builtin.file:
       path: "{{ outdir }}"
       state: directory

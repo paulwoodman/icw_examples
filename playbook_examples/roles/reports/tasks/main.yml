@@ -7,3 +7,8 @@ pre_tasks:
     ansible.builtin.file:
       path: /var/tmp/reports
       state: directory
+tasks:
+
+  - name: Debug
+    debug:
+      msg: "test"

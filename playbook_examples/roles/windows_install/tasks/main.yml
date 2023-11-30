@@ -11,7 +11,7 @@
     url: https:/icwgroup.jfrog.io/artifactory/{{ item.app }}/{{ item.pkg }}
     headers:
       X-JFrog-Art-Api: {{ artifactory_ansible_api_key_saas }}"
-    dest: C:\Windows\Temp\{{ item.pkg }}
+    dest: "C:\Windows\Temp\{{ item.pkg }}"
   with_items: "{{ msi }}"
 
 #- name: Install msi's packages

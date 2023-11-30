@@ -1,11 +1,9 @@
 ---
-vars:
-  outdir: /var/tmp/reports
 
 pre_tasks:
   
   - name: create output folder
     run_onces: yes
     ansible.builtin.file:
-      path: "{{ outdir }}"
+      path: /var/tmp/reports
       state: directory

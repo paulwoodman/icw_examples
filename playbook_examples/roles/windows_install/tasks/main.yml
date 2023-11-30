@@ -8,9 +8,9 @@
 
 - name: Copy msi's to temp dir
   ansible.builtin.win_get_url:
-    url: https:/icwgroup.jfrog.io/artifactory/{{ item.app }}/{{ item.pkg }}
+    url: "https:/icwgroup.jfrog.io/artifactory/{{ item.app }}/{{ item.pkg }}"
     headers:
-      X-JFrog-Art-Api: {{ artifactory_ansible_api_key_saas }}"
+      X-JFrog-Art-Api: "{{ artifactory_ansible_api_key_saas }}"
     dest: "C:\Windows\Temp\{{ item.pkg }}"
   with_items: "{{ msi }}"
 

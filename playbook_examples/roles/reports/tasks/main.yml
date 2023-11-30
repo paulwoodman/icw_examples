@@ -1,14 +1,7 @@
 ---
-
-pre_tasks:
   
-  - name: create output folder
-    run_onces: yes
-    ansible.builtin.file:
-      path: /var/tmp/reports
-      state: directory
-tasks:
+- name: create output folder
+  ansible.builtin.file:
+    path: /var/tmp/reports
+    state: directory
 
-  - name: Debug
-    debug:
-      msg: "test"

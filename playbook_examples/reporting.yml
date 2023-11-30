@@ -7,4 +7,4 @@
 
     - name: Reporting
       include_role:
-        name: reporting
+        name: reports

@@ -1,4 +1,7 @@
 msi:
-- app: "test", pkg: "test"
+- app: test
+  pkg: test
+- app: test2
+  pkg: test2 
 
 

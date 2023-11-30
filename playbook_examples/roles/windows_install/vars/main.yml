@@ -1,0 +1,5 @@
+msi:
+- app: test, pkg: test
+- app: test, pkg: test
+
+

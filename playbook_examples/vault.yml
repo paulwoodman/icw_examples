@@ -1,9 +1,8 @@
 ---
 - name: Ansible Vault example
   hosts: all
-  gather_facts: True
+  gather_facts: False
   tasks:
-
 
     - name: vault example
       include_role:

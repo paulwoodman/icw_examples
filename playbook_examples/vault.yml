@@ -1,0 +1,10 @@
+---
+- name: Ansible Vault example
+  hosts: all
+  gather_facts: True
+  tasks:
+
+
+    - name: vault example
+      include_role:
+        name: vault_example

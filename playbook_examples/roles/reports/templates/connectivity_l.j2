@@ -1,6 +1,6 @@
 Hosts Under Management Metric(s):
 
 Reachable Linux Hosts: {{ reachable }} / {{ total_servers }}  ({{ ( (reachable | int) / (total_servers | int) * 100) | round(2) }}%)
-{% for host in groups['total_servers'] %}
+{% for host in groups['all'] %}
   {{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}
 {% endfor %}

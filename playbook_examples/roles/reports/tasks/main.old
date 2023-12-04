@@ -1,0 +1,7 @@
+---
+  
+- name: create output folder
+  ansible.builtin.file:
+    path: /var/tmp/reports
+    state: directory
+

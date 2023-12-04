@@ -1,7 +1,24 @@
 ---
-  
-- name: create output folder
-  ansible.builtin.file:
-    path: /var/tmp/reports
-    state: directory
+- name: Capture Connectivity Metrics for Linux Servers
+  hosts: linux_servers
+  gather_facts: false
 
+  tasks:
+    - name: Ping Red Hat Enterprise Linux Servers
+      ansible.builtin.ping:
+      register: ping_result
+
+    - name: Calculate Reachability Percentage
+      ansible.builtin.set_fact:
+        cacheable: true
+        reachable: "{{ ansible_play_hosts | length }}"
+        total_servers: "{{ ansible_play_hosts_all | length }}"
+
+    - name: Populate results into connectivity report
+      ansible.builtin.template:
+        src: connectivity_l.j2
+        dest: /www/var/html
+        mode: "0644"
+        owner: www
+        group: www
+      delegate_to: ansible-ee.rydzinski.local

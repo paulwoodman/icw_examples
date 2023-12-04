@@ -15,6 +15,6 @@
         src: connectivity_l.j2
         dest: /var/www/html/index.html
         mode: "0644"
-        owner: www
-        group: www
+        owner: apache
+        group: apache
       delegate_to: ansible-ee.rydzinski.local

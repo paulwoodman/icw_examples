@@ -1,0 +1,9 @@
+---
+- name: Ansible Hostname Gen
+  hosts: all
+  gather_facts: False
+  tasks:
+
+    - name: Create hostname name
+      include_role:
+        name: hostname_gen

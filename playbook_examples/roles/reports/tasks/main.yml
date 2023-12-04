@@ -13,7 +13,7 @@
     - name: Populate results into connectivity report
       ansible.builtin.template:
         src: connectivity_l.j2
-        dest: /www/var/html
+        dest: /www/var/html/index.html
         mode: "0644"
         owner: www
         group: www

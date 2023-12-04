@@ -1,6 +1,6 @@
 - name: set a fact based on a variable
   set_fact:
-    server_name: "{{ datacenter }}{{ application }}{{ tier }}"
+    server_name: "{{ datacenter }}{{ application }}{{ tier }}{{ hostnum | int + = 1 }}"
 
 - name: Print
   debug:

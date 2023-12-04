@@ -4,7 +4,7 @@
 
 - name: Print
   debug:
-    var: "{{ server_name }}"
+    msg: "{{ server_name }}"
 
 #- set_fact:
 #    new_vm_name: "{{ firstpart }}-{{ (((server_list | sort | max).split('-'))[1]| int) + 1 }}"

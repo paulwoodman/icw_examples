@@ -1,9 +1,5 @@
 ---
-- name: Capture Connectivity Metrics for Linux Servers
-  hosts: linux_servers
-  gather_facts: false
 
-  tasks:
     - name: Ping Red Hat Enterprise Linux Servers
       ansible.builtin.ping:
       register: ping_result

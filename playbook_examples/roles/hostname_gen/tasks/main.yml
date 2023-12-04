@@ -1,10 +1,10 @@
 - name: Counter
   set_fact:
-    counter: "{{ number | int + 1 }}"
+    next_host: "{{ number | int + 1 }}"
 
 - name: set a fact based on a variable
   set_fact:
-    server_name: "{{ datacenter }}{{ application }}{{ tier }}{{ counter }}"
+    server_name: "{{ datacenter }}{{ application }}{{ tier }}{{ next_host }}"
 
 - name: Print
   debug:

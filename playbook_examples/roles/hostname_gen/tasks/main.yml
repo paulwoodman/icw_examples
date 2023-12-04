@@ -1,7 +1,7 @@
 - set_fact:
     new_vm_name: "{{ firstpart }}-{{ (((server_list | sort | max).split('-'))[1]| int) + 1 }}"
-  delegate_to: localhost
+#  delegate_to: localhost
 
-- name: print name
-   debug:
-     var: {{ new_vm_name }}
+#- name: print name
+#   debug:
+#     var: {{ new_vm_name }}

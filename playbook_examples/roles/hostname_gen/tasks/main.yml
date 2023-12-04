@@ -1,4 +1,6 @@
-
+- name: Counter
+  set_fact:
+    counter: {{ number | int + 1 }}
 
 - name: set a fact based on a variable
   set_fact:

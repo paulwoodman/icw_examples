@@ -6,6 +6,9 @@
   debug:
     msg: "{{ server_name }}"
 
+- name: Api call
+  
+
 #- set_fact:
 #    new_vm_name: "{{ firstpart }}-{{ (((server_list | sort | max).split('-'))[1]| int) + 1 }}"
 #  delegate_to: localhost

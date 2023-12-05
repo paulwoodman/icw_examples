@@ -11,7 +11,6 @@
     url: http://192.168.1.142:3000/servers
     method: GET
     return_content: yes
-    status_code: 200
     body_format: json
   register: result
   delegate_to: localhost

@@ -21,7 +21,7 @@
 #    msg: "{{ host_data }}"
 
 - set_fact:
-    hosts_all: "{{ hosts_data | sort | list }}" 
+    hosts_all: "{{ hosts_data.content['name'] | sort | list }}" 
 
 - name: print
   debug:

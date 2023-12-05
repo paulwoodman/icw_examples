@@ -20,6 +20,12 @@
   debug:
     msg: "{{ result }}"
 
+- name: Display all servers names
+  ansible.builtin.debug:
+    var: item
+  loop: "{{ result | community.general.json_query('name') }}"
+  
+
 #- set_fact:
 #    new_vm_name: "{{ firstpart }}-{{ (((server_list | sort | max).split('-'))[1]| int) + 1 }}"
 #  delegate_to: localhost

@@ -22,7 +22,9 @@
 
 - set_fact:
 #    hosts_all: "{{ hosts_data.content['name'] | sort | list }}" 
-    hosts_all: "{{ hosts_data.json[0].name }}" 
+#    hosts_all: "{{ hosts_data.json[0].name }}" 
+    hosts_all: "{{ hosts_data.json | map ('name') | list  }}" 
+
 
 - name: print
   debug:

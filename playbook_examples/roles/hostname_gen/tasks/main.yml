@@ -7,7 +7,17 @@
     msg: "{{ server_name }}"
 
 - name: Api call
+  ansible.builtin.uri:
+    url: hhttp://192.168.1.142:3000/servers
+    method: GET
+    return_content: yes
+    status_code: 200
+    body_format: json
+  register: result
   
+- name: print output
+  debug:
+    msg: "{{ result }}"
 
 #- set_fact:
 #    new_vm_name: "{{ firstpart }}-{{ (((server_list | sort | max).split('-'))[1]| int) + 1 }}"

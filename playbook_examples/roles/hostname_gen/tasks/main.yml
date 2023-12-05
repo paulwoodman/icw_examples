@@ -21,7 +21,7 @@
 #    msg: "{{ host_data }}"
 
 - set_fact:
-    hosts_all: "{{ hosts_data.json.data | map(attribute='name') | list }}" 
+    hosts_all: "{{ hosts_data | map(attribute='name') | list }}" 
 
 - name: print
   debug:

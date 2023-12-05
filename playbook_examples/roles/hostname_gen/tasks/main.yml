@@ -21,11 +21,11 @@
 #    msg: "{{ host_data }}"
 
 - set_fact:
-    hosts_all "{{ hosts_data.json.data | map(attribute='name') | list }}"'  
+    hosts_all: "{{ hosts_data.json.data | map(attribute='name') | list }}" 
 
 - name: print
   debug:
-    hosts_all
+    var: hosts_all
 
 #- set_fact:
 #    new_vm_name: "{{ firstpart }}-{{ (((server_list | sort | max).split('-'))[1]| int) + 1 }}"

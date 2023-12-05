@@ -21,7 +21,7 @@
 #    msg: "{{ host_data }}"
 
 - set_fact:
-    hosts_all: "{{ groups['servers'] | map('regex_replace', 'app(\\d+)', '\\1') | map('int') | sort | map('regex_replace', '^', 'app') | list }}" 
+    hosts_all: "{{ hosts_data['name'] | map('regex_replace', 'app(\\d+)', '\\1') | map('int') | sort | map('regex_replace', '^', 'app') | list }}" 
 
 - name: print
   debug:

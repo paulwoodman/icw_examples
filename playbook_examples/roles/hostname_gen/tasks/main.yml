@@ -16,9 +16,9 @@
   register: hosts_data
   delegate_to: localhost
   
-#- name: print output
-#  debug:
-#    msg: "{{ host_data }}"
+- name: print output
+  debug:
+    msg: "{{ host_data }}"
 
 - set_fact:
     hosts_all: "{{ hosts_data.content['name'] | sort | list }}" 

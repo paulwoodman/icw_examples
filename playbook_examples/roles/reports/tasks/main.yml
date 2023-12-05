@@ -10,6 +10,11 @@
         reachable: "{{ ansible_play_hosts | length }}"
         total_servers: "{{ ansible_play_hosts_all | length }}"
 
+    - name: list failed hosts
+      ansible.builtin.debug:
+        msg: "{{ ansible_play_hosts_all | difference(ansible_play_hosts) }}"
+      run_once: true 
+
     - name: Populate results into connectivity report
       ansible.builtin.template:
         src: connectivity_l.j2

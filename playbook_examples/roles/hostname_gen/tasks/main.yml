@@ -13,18 +13,19 @@
     return_content: yes
     headers:
       Accept: application/json
-  register: result
+  register: hosts_data
   delegate_to: localhost
   
-- name: print output
-  debug:
-    msg: "{{ result }}"
+#- name: print output
+#  debug:
+#    msg: "{{ host_data }}"
 
-- name: Display all servers names
-  ansible.builtin.debug:
-    var: item
-  loop: "{{ result | community.general.json_query('name') }}"
-  
+- set_fact:
+   hosts_all "{{ hosts_json.json.data | map(attribute='name') | list }}"'  
+
+- name: print
+  debug:
+    hosts_all
 
 #- set_fact:
 #    new_vm_name: "{{ firstpart }}-{{ (((server_list | sort | max).split('-'))[1]| int) + 1 }}"

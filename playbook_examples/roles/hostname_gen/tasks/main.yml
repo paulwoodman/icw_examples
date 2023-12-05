@@ -20,10 +20,10 @@
   debug:
     msg: "{{ hosts_data }}"
 
-#- set_fact:
+- set_fact:
 #    hosts_all: "{{ hosts_data.content['name'] | sort | list }}" 
 #    hosts_all: "{{ hosts_data.json[0].name }}" 
-     hosts_all: "{{ hosts_data.json[*].name | list  }}" 
+    hosts_all: "{{ hosts_data.json[*].name | list  }}" 
 
 #- name: Display all server names
 #  ansible.builtin.debug:

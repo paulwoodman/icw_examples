@@ -18,9 +18,10 @@
   
 - name: print output
   debug:
-    msg: "{{ host_data }}"
+    msg: "{{ hosts_data }}"
 
 - set_fact:
+#    hosts_all: "{{ hosts_data.content['name'] | sort | list }}" 
     hosts_all: "{{ hosts_data.content['name'] | sort | list }}" 
 
 - name: print

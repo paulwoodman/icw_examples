@@ -5,3 +5,9 @@
 - name: Debug
   debug:
     var: ansible_facts.services["autofs.service"]
+
+
+- name: Print only this task
+  debug:
+   msg: "print this task"
+  when: ansible_facts.services["autofs.service"].state == 'stopped'  

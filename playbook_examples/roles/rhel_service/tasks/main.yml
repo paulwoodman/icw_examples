@@ -10,4 +10,5 @@
   debug:
    msg: "print this task"
 #  when: ansible_facts.services["autofs.service"].state == 'stopped'  
-  when: ansible_facts.services['{{ servey_status }}'].state == 'stopped'  
+#  when: ansible_facts.services['{{ servey_status }}'].state == 'stopped'  
+  when: servey_status | ansible_facts.services.state == 'stopped'  

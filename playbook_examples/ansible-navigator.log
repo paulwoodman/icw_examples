@@ -1051,3 +1051,4 @@
 2023-12-05T07:55:28.049840+00:00 INFO 'ansible_navigator.main' Configuration failed, using default log file location. (/root/icw_examples/playbook_examples/ansible-navigator.log) Log level set to debug
 2023-12-05T07:55:28.049909+00:00 INFO 'ansible_navigator.main' Review the hints and log file to see what went wrong.
 2023-12-05T07:56:09.725953+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2023-12-05T17:37:36.901331+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed

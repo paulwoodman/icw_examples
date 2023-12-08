@@ -1,0 +1,10 @@
+---
+- name: RHEL Package install
+  hosts: all
+  gather_facts: False
+  tasks:
+
+
+    - name: Install a package
+      include_role:
+        name: rhel_installpkgs

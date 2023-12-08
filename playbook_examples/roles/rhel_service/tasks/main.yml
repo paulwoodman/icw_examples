@@ -1,6 +1,5 @@
 - name: collect facts about system services
   service_facts:
-#  register: services_state
 
 - name: Debug
   debug:
@@ -10,4 +9,5 @@
 - name: Print only this task
   debug:
    msg: "print this task"
-  when: ansible_facts.services["autofs.service"].state == 'started'  
+#  when: ansible_facts.services["autofs.service"].state == 'stopped'  
+  when: ansible_facts.services["{{ servey_status }}"].state == 'stopped'  

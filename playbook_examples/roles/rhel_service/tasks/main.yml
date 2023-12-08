@@ -1,8 +1,7 @@
 - name: collect facts about system services
   service_facts:
-  register: services_state
+#  register: services_state
 
 - name: Debug
   debug:
-    var: services_state.services
-  when: ("crond.service in services")
+    var: ansible_facts.services["autofs.service"]

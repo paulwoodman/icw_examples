@@ -4,5 +4,5 @@
 
 - name: Debug
   debug:
-    var: services_state.services['rhsm.service']
-
+    var: services_state.services
+  when: ("crond.service in services")
